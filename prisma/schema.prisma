@@ -11,8 +11,28 @@ generator client {
     provider = "prisma-client-js"
 }
 
-model Example {
+model Contact {
     id        String   @id @default(cuid())
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+
+    name     String @db.VarChar(50)
+    lastname String @db.VarChar(50)
+    alias    String @db.VarChar(100)
+    photoKey String @db.VarChar(2048)
+
+    document              String @db.VarChar(50)
+    email                 String @db.VarChar(320)
+    phoneCountryIndicator String @db.VarChar(7)
+    phone                 String @db.VarChar(15)
+
+    currency  String @db.VarChar(3)
+    totalDebt String @db.VarChar(3)
+
+    indebtedToId String
+
+    @@unique([indebtedToId, document], name: "contactDocument")
+    @@unique([indebtedToId, email], name: "contactEmail")
+    @@unique([indebtedToId, phone], name: "contactPhone")
+    @@index([indebtedToId])
 }
