@@ -64,10 +64,10 @@ export function Sidebar({ isVisible, onClose }: SidebarProps) {
             width: 0,
             transition: { delay: 0.7, duration: 0.3 },
           }}
-          className="fixed top-0 left-0 z-20 flex h-screen flex-col rounded-r-3xl border-none bg-slate-900 shadow-sm"
+          className="fixed top-0 right-0 z-20 flex h-screen flex-col rounded-l-2xl border-none bg-slate-900 shadow-sm"
         >
           <motion.div
-            className="container"
+            className="flex h-full flex-col"
             initial="closed"
             animate="open"
             exit="closed"
@@ -101,7 +101,7 @@ export function Sidebar({ isVisible, onClose }: SidebarProps) {
             <div className="mt-auto flex flex-col overflow-y-auto p-4">
               <button
                 onClick={() => void signOut()}
-                className="flex border-spacing-2 items-center justify-center gap-1 rounded-md border-2 bg-white px-4 py-2
+                className="mt-auto flex border-spacing-2 items-center justify-center gap-1 rounded-md border-2 bg-white px-4 py-2
                 text-zinc-900  transition-transform hover:border-red-600 hover:bg-gray-200 hover:ring-4
                 hover:ring-red-200/50  focus:scale-95 focus:bg-gray-400"
               >
