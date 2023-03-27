@@ -1,11 +1,11 @@
 import { type AppType } from "next/app";
 import { ClerkProvider } from "@clerk/nextjs";
+import { useCycle } from "framer-motion";
 
+import { Sidebar } from "~/components/Sidebar";
 import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
-import { useCycle } from "framer-motion";
-import { Sidebar } from "~/components/Sidebar";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   const [showSidebar, cycleSidebarVisibility] = useCycle(true, false);
