@@ -8,7 +8,7 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
-  const [showSidebar, cycleSidebarVisibility] = useCycle(true, false);
+  const [showSidebar, cycleSidebarVisibility] = useCycle(false, true);
   return (
     <ClerkProvider {...pageProps}>
       <button onClick={() => cycleSidebarVisibility()}>
