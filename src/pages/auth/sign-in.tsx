@@ -3,8 +3,8 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import { SignInButton, useUser } from "@clerk/nextjs";
 
-const Home: NextPage = () => {
-  console.log("Render Home Page");
+const SignInPage: NextPage = () => {
+  console.log("Render Sign-In Page");
   const user = useUser();
 
   return (
@@ -29,4 +29,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default React.memo(Home);
+export default React.memo(SignInPage);

@@ -1,10 +1,10 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function useMediaQuery(queryString: string) {
   const [matches, setMatches] = useState(false);
   const matchesRef = useRef<boolean>();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const watcher = () => {
       const query = window.matchMedia(queryString);
       matchesRef.current = query.matches;
